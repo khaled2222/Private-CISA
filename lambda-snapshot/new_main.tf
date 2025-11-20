@@ -89,7 +89,7 @@ data "archive_file" "lambda_zip" {
 data "aws_subnets" "lambda_subnets" {
   filter {
     name   = "vpc-id"
-    values = ["vpc-00cdgshjgajdgajdgj"]
+    values = ["vpc-00c4983dd84d0d71f"]
   }
 }
 
@@ -99,7 +99,7 @@ data "aws_subnets" "lambda_subnets" {
 resource "aws_security_group" "lambda_sg" {
   name        = "lambda-ebs-backup-sg"
   description = "Security group for Lambda to run inside VPC"
-  vpc_id      = "vpc-00cdgshjgajdgajdgj"
+  vpc_id      = "vpc-00c4983dd84d0d71f"
 
   # Lambda needs outbound traffic to reach EC2 API endpoints (public AWS endpoints)
   egress {

@@ -20,7 +20,7 @@ data "archive_file" "lambda_zip" {
 data "aws_subnets" "private_subnets" {
   filter {
     name   = "vpc-id"
-    values = ["vpc-00cdgshjgajdgajdgj"]
+    values = ["vpc-00c4983dd84d0d71f"]
   }
 }
 
@@ -30,7 +30,7 @@ data "aws_subnets" "private_subnets" {
 resource "aws_security_group" "lambda_sg" {
   name        = "lambda-ebs-backup-sg"
   description = "Security group for Lambda EBS backup"
-  vpc_id      = "vpc-00cdgshjgajdgajdgj"
+  vpc_id      = "vpc-00c4983dd84d0d71f"
 
   # Allow all outbound traffic (required for AWS API calls)
   egress {
